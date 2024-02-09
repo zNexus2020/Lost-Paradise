@@ -4,7 +4,7 @@ module.exports = {
   name: "guildMemberAdd",
   execute(member) {
     if (!member.user.bot)
-      member.guild.channels.cache.get("1192904659707363389").send({
+      member.guild.channels.cache.get("930786450629333023").send({
         embeds: [
           new EmbedBuilder()
             .setTitle(`Welcome to ${member.guild.name}`)

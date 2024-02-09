@@ -50,6 +50,8 @@ module.exports = {
     let image = interaction.options.getAttachment("image");
     let footer = interaction.options.getString("footer");
 
+    description = description.replace(/\\n/g, "\n");
+
     let checkColor = /^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(color);
     if (!checkColor) {
       await interaction.reply({

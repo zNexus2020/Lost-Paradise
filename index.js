@@ -7,6 +7,12 @@ const { loadCommands } = require("./Handlers/commandHandler");
 
 client.commands = new Collection();
 
+module.exports = client;
+
+const { connect } = require("mongoose");
+connect(process.env.MONGODB)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log(err));
 client.login(process.env.TOKEN).then(() => {
   loadEvents(client);
   loadCommands(client);
