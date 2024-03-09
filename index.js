@@ -1,4 +1,6 @@
 require("dotenv").config();
+const keepAlive = require("./site");
+
 const { Client, Collection } = require("discord.js");
 const client = new Client({ intents: 131071 });
 
@@ -17,3 +19,5 @@ client.login(process.env.TOKEN).then(() => {
   loadEvents(client);
   loadCommands(client);
 });
+
+keepAlive()
